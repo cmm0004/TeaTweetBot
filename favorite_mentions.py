@@ -5,11 +5,12 @@ import datetime
 new_api = API()
 api = new_api.authenticate()
 
-mentions = api.mentions_timeline(None, None, 5, None)
+while True:
+    if time
+mentions = api.mentions_timeline()
 for mention in mentions:
-    print mention.id
     try:
-        api.create_favorite(526275028388945920)
+        api.create_favorite(mention.id)
     except tweepy.TweepError:
         print "You've already favorited that " + str(mention.id)
         continue
