@@ -5,8 +5,7 @@ import datetime
 new_api = API()
 api = new_api.authenticate()
 
-while True:
-    if time
+
 mentions = api.mentions_timeline()
 for mention in mentions:
     try:
