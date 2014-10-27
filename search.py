@@ -31,24 +31,7 @@ for i in range(1):
     headers = req.to_header()
     url = req.to_url()
     response = urllib2.Request(url)
-##    url = url1
-##    params["q"] ="#tealover"
-##    params["count"] = 1
-##    params["geocode"] =""
-##    params["lang"] ="en"
-##    params["locale"] =""
-##    params["result_type"] ="recent" # Example Values: mixed, recent, popular
-##    params["until"] =""
-##    params["since_id"] =""
-##    params["max_id"] = str(prev_id)
+
     data = json.load(urllib2.urlopen(response))
     print data
-##    if data["statuses"] == []:
-##        print data
-##        break
-##    else:
-##        prev_id =int(data["statuses"][-1]["id"]) - 1
-##        print prev_id, i
-##    f = open("outfile_"+ str(i) +".txt","w")
-##    json.dump(data["statuses"], f)
-##    f.close()
+
