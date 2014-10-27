@@ -3,11 +3,12 @@ from APIKeys import APIKeys
 import time
 import urllib2
 import json
-apikeys = APIKeys()
+
 
 class Search(object):
 
     def __init__(self, query, count):
+        self.apikeys = APIKeys()
         self.query = query
         self.count = count
         self.apikeys = APIKeys()
