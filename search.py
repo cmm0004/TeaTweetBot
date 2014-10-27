@@ -19,7 +19,6 @@ token = oauth2.Token(key=apikeys.access_token,
 params["oauth_consumer_key"] = consumer.key
 params["oauth_token"] = token.key
 
-prev_id =int('435458631669415936')
 
 for i in range(1):
     url = url1
