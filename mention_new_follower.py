@@ -6,14 +6,21 @@ new_api = API()
 api = new_api.authenticate()
 
 followers = api.followers()
+most_recent = followers[0].screen_name
 #grab most recent follower
-saved_follower = open("./fixtures/most_recent.txt","r+")
-if saved_follower.read() != followers[0].user.screen_name:
-    fixtures_thx4follow = open("./fixtures/msgs_to_followers.txt", "r")
+saved_follower = open("./fixtures/most_recent.txt","r")
+s_f = saved_follower.read()
+saved_follower.close()
+
+if s_f != most_recent:
+    new_saved_follower = open("./fixtures/most_recent.txt","w")
+    new_saved_follower.write(most_recent)
+    new_saved_follower.close()
     lines = open("./fixtures/msgs_to_followers.txt").read().splitlines()
-    mention = "@" + str(followers[0].user.screen_name)
-    api.update_status(mention + random.choice(lines)) 
+    mention = "@" + str(most_recent)
     
-most_recent=followers[0]
+    api.update_status(mention + " " + random.choice(lines))
+    
+
 
                       
